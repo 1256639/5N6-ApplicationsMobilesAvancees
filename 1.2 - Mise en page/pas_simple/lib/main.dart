@@ -38,13 +38,47 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+      body: Column(
+        children: <Widget> [
 
-          ],
-        ),
+          // partie en rouge
+          Container(
+            padding: const EdgeInsets.all(5),
+            child: Row(
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width * 2/3 - 32,
+                  height: 200,
+                  color: Colors.red,
+                ),
+              ],
+            ),
+          ),
+
+          // espace blanc
+          Expanded(
+            child: Column(),
+          ),
+
+          // bouton en bas
+          Container(
+            padding: const EdgeInsets.all(5),
+            child: Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        foregroundColor: Colors.white,
+                      ),
+                      onPressed: () {},
+                      child: const Text('Bouton du bas'),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
